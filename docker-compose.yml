@@ -7,7 +7,13 @@ services:
     env_file: .env
     volumes:
       - /var/lib/marzban:/var/lib/marzban
-      # Mapping the localized files
-      - ./app:/code/app
+      # Localized files mapping
+      - ./app/telegram/handlers/admin.py:/code/app/telegram/handlers/admin.py
+      - ./app/telegram/handlers/report.py:/code/app/telegram/handlers/report.py
+      - ./app/telegram/handlers/user.py:/code/app/telegram/handlers/user.py
+      - ./app/telegram/utils/keyboard.py:/code/app/telegram/utils/keyboard.py
+      - ./app/telegram/utils/shared.py:/code/app/telegram/utils/shared.py
+      - ./app/xray/config.py:/code/app/xray/config.py
+      - ./app/xray/core.py:/code/app/xray/core.py
     environment:
       - TZ=Europe/Moscow
