@@ -1,0 +1,25 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Database
+*.db
+*.sqlite3
+
+# Marzban specific
+/backups/
+/logs/
+*.log
+/xray-core/
+
+# OS files
+.DS_Store
+Thumbs.db

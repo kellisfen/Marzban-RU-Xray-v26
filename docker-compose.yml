@@ -1,0 +1,13 @@
+services:
+  marzban:
+    image: gozargah/marzban:latest
+    container_name: marzban
+    restart: always
+    network_mode: host
+    env_file: .env
+    volumes:
+      - /var/lib/marzban:/var/lib/marzban
+      # Mapping the localized files
+      - ./app:/code/app
+    environment:
+      - TZ=Europe/Moscow
