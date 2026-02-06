@@ -15,7 +15,7 @@ PROJECT_DIR="/var/lib/marzban"
 BACKUP_DIR="/var/lib/marzban/backups"
 LOG_FILE="/var/log/marzban_deploy.log"
 TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
-REPO_URL="https://github.com/USER/REPO.git" # Замените на ваш репозиторий
+REPO_URL="https://github.com/kellisfen/Marzban-RU-Xray-v26.git" # Замените на ваш репозиторий
 
 # Загрузка переменных окружения
 if [ -f "$PROJECT_DIR/.env" ]; then
