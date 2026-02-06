@@ -7,6 +7,24 @@ sudo bash -c "$(curl -sL https://github.com/kellisfen/Marzban-RU-Xray-v26/raw/ma
 ```
 *Скрипт автоматически установит Docker, Docker Compose, Git и настроит все необходимые компоненты.*
 
+## Настройка конфигурации
+После установки вам необходимо отредактировать файл `.env`, чтобы бот и панель заработали с вашими данными:
+
+1. Перейдите в папку проекта: `cd /var/lib/marzban`
+2. Откройте файл настроек: `nano .env`
+3. **Заполните следующие поля:**
+   - `TELEGRAM_TOKEN`: Токен вашего бота от [@BotFather](https://t.me/BotFather).
+   - `TELEGRAM_ADMIN_IDS`: Ваш Telegram ID (узнать можно в [@userinfobot](https://t.me/userinfobot)).
+   - `TELEGRAM_LOGGER_CHANNEL_ID`: ID канала, куда бот будет слать логи действий.
+   - `XRAY_SUBSCRIPTION_URL_PREFIX`: Ваш домен (например, `https://sub.mydomain.com`) для генерации ссылок подписки.
+   - `SUDO_PASSWORD`: Установите надежный пароль для входа в веб-панель.
+
+4. Сохраните изменения (`Ctrl+O`, `Enter`) и выйдите (`Ctrl+X`).
+5. Перезапустите проект:
+   ```bash
+   docker-compose restart marzban
+   ```
+
 ## Описание
 Данный репозиторий содержит модифицированные файлы для проекта **Marzban**, обеспечивающие полную локализацию Telegram-бота на русский язык и совместимость с последними версиями **Xray-core (v26.2.2+)**.
 
