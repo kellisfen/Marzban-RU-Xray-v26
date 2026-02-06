@@ -1,5 +1,12 @@
 # Marzban Localized (Russian) & Xray v26 Support
 
+## Быстрая установка (с нуля)
+Для установки на чистый сервер (Ubuntu/Debian) выполните следующую команду:
+```bash
+sudo bash -c "$(curl -sL https://github.com/kellisfen/Marzban-RU-Xray-v26/raw/main/install.sh)"
+```
+*Скрипт автоматически установит Docker, Docker Compose, Git и настроит все необходимые компоненты.*
+
 ## Описание
 Данный репозиторий содержит модифицированные файлы для проекта **Marzban**, обеспечивающие полную локализацию Telegram-бота на русский язык и совместимость с последними версиями **Xray-core (v26.2.2+)**.
 
