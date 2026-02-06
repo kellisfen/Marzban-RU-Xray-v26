@@ -78,10 +78,20 @@ configure_env() {
     fi
 }
 
-# 5. Запуск
+# 5. Установка Xray Core
+install_xray() {
+    log "Установка Xray Core..."
+    mkdir -p /var/lib/marzban/xray-core
+    curl -L https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip -o /tmp/xray.zip
+    unzip -o /tmp/xray.zip -d /var/lib/marzban/xray-core
+    chmod +x /var/lib/marzban/xray-core/xray
+    rm /tmp/xray.zip
+}
+
+# 6. Запуск
 launch() {
     log "Запуск контейнеров Marzban..."
-    docker-compose up -d
+    docker-compose up -d --force-recreate
     
     log "Ожидание запуска (10 сек)..."
     sleep 10
@@ -98,8 +108,9 @@ launch() {
     fi
 }
 
-# Основной процесс
+# Основной цикл
 install_dependencies
 setup_directory
 configure_env
+install_xray
 launch
